@@ -7,7 +7,9 @@ h1{
     padding: 10px 0;
 }
 :root {
-    --bg-color:#2e2929;
+    /* --bg-color:#2e2929; */
+    --bg-color: rgb(97, 97, 97);
+
 }
 .container {
     width: 100%;
