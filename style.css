@@ -1,0 +1,137 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+h1{
+    padding: 10px 0;
+}
+:root {
+    --bg-color:#2e2929;
+}
+.container {
+    width: 100%;
+    background: var(--bg-color);
+    color: white;
+    padding: 20px 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    height: 100vh;
+    
+}
+.select-voice {
+    font-size: .9rem;
+}
+select{
+    width: 100%;
+    margin: 7px 0 10px 0;
+    padding: 6px;
+    background-color: rgb(146, 146, 146);
+    border-radius: 4px;
+    outline: none;
+    border: 1px solid rgb(163, 163, 163);
+}
+.controls-container {
+    width: 100%;
+    height: 55px;
+}
+.controls {    
+    float: left;    
+}
+.controls label{
+    font-size: 0.7rem;
+}
+.control-input {
+    padding:7px 20px 0 0;
+}
+.control-input small{
+    font-size: 70%;
+ }
+ /* range  */
+.controls input {  
+    height: 6px;    
+    width: 100%;
+}
+.range-value-lable {
+    display: flex;
+    margin-top: 4px;
+}
+.range-value-lable small:nth-child(1) {
+    margin-right: auto;
+}
+
+/* textarea */
+.text-area {
+    margin-top: 15px;
+}
+.text-area textarea {
+    background: transparent;
+    border: 1px solid rgba(211, 211, 211, 0.689);
+    border-radius: 5px;
+    width: 100%;
+    padding: 10px;
+    color: white;
+}
+.buttons {
+    margin-top: 15px;
+}
+.buttons > .start,.pause,.resume,.cancel {
+    padding: 5px 8px;
+    margin-right: 10px;
+    border-radius: 3px;
+    border: 1px solid transparent;
+}
+.start {
+    background: rgb(68, 199, 41);
+    color: white;
+}
+.pause {
+    background-color: rgb(247, 171, 31);
+}
+.resume {
+    background-color:rgb(82, 194, 238);
+}
+.cancel {
+    background: rgb(201, 51, 51);
+    color: #fff;
+}
+.start:active {
+    outline: green solid 3px;
+    background: rgba(68, 199, 41,.8);
+}
+.pause:active {
+    outline: rgba(255, 166, 0, 0.527) solid 3px;
+    background-color: rgba(247, 171, 31,.8);
+}
+.resume:active {
+    outline: rgba(82, 194, 238,.5) solid 3px;
+    background-color:rgba(82, 194, 238,.8);
+}
+.cancel:active {
+    outline: rgba(201, 51, 51,.5) solid 3px;
+    background-color: rgba(201, 51, 51,.8);
+}
+
+
+/* media query */
+@media (min-width: 750px){  
+    .controls {    
+        width: 25%;
+    }
+}
+@media (min-width: 990px){  
+    .controls {    
+        width: 25%;
+    }
+}
+@media (min-width: 991px){  
+    .controls {    
+        width: 17%;
+    }
+}
+@media (max-width:750px) {
+    .controls {    
+        width: 33.33%;
+    }
+ 
+}
