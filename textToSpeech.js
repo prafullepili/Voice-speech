@@ -51,15 +51,23 @@ document.querySelector("#voices").addEventListener("change", () => {
 document.querySelector("#start").addEventListener("click", () => {
     window.speechSynthesis.cancel();
     const table = document.querySelector('#table').value;
+    tablespeak = "";
     if (table != "") {
-        printtable = "";
+        tableprinting = "";
         for (let i = 1; i < 11; i++) {
-            printtable += `${table} times ${i} = ${parseInt(table) * i}\n`;
+            
+            tablespeak += `${table} times ${i} = ${parseInt(table) * i}\n`;
+            tableprinting += `${table} x ${i} = ${parseInt(table) * i}\n`;
         }
-        document.querySelector("textarea").value = printtable;
-    }
-    speech.text = document.querySelector("textarea").value;
+    document.querySelector("textarea").value = tableprinting;
+    speech.text = tablespeak;
     window.speechSynthesis.speak(speech);
+    document.querySelector('#table').value = '';
+    }
+    else {
+        speech.text = document.querySelector("textarea").value;
+        window.speechSynthesis.speak(speech);
+    }
 });
 
 // pause
