@@ -1,5 +1,5 @@
 let speech = new SpeechSynthesisUtterance();
-speech.lang = "en";
+speech.lang = "";
 
 let voices = [];
 window.speechSynthesis.onvoiceschanged = () => {
@@ -10,38 +10,40 @@ window.speechSynthesis.onvoiceschanged = () => {
     voices.forEach((voice, i) => (voiceSelect.options[i] = new Option(voice.name, i)));
 }
 
+
+// Volume
+document.querySelector("#volume").addEventListener("input", () => {
+    var volume = document.querySelector("#volume").value;
+    speech.volume = volume;
+    console.log(speech.volume);
+    document.querySelector("#volume-level").innerHTML = volume;
+})
+
+//speed rate
 document.querySelector("#rate").addEventListener("input", () => {
     const rate = document.querySelector("#rate").value;
     speech.rate = rate;
     document.querySelector("#rate-level").innerHTML = rate;
+    console.log(speech.rate);
 })
 
-// default valume
-const volume = document.querySelector("#volume").value;
-speech.volume = volume;
-document.querySelector("#volume-level").innerHTML = volume;
-
-
-document.querySelector("#volume").addEventListener("input", () => {
-    const volume = document.querySelector("#volume").value;
-    speech.volume = volume;
-    document.querySelector("#volume-level").innerHTML = volume;
-})
-
+//pitch
 document.querySelector("#pitch").addEventListener("input", () => {
     const pitch = document.querySelector("#pitch").value;
     speech.pitch = pitch;
     document.querySelector("#pitch-level").innerHTML = pitch;
+    console.log(speech.pitch);
 })
 
 // change in voices
 document.querySelector("#voices").addEventListener("change", () => {
     speech.voice = voices[document.querySelector("#voices").value];
+    console.log(voice);
 })
 
 
 document.querySelector("#start").addEventListener("click", () => {
-    speech.text = document.querySelector("textarea").value;
+    speech.text= document.querySelector("textarea").value;
     window.speechSynthesis.speak(speech);
 });
 

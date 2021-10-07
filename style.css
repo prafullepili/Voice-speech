@@ -74,6 +74,9 @@ select{
     padding: 10px;
     color: white;
 }
+.text-area textarea::placeholder {
+    color: rgba(245, 245, 245, 0.671);
+}
 .buttons {
     margin-top: 15px;
 }
