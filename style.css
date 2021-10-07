@@ -159,4 +159,7 @@ select{
     .controls {    
         width: 33.33%;
     }
+    .container {
+        padding: 20px;
+    }
 }
