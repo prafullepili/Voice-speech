@@ -18,7 +18,8 @@ h1{
     padding: 20px 40px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
-    height: 100vh;
+    min-height: 100vh;
+    height: 100%;
     
 }
 .select-voice {
@@ -76,6 +77,26 @@ select{
 }
 .text-area textarea::placeholder {
     color: rgba(245, 245, 245, 0.671);
+}
+
+/* table */
+.table-container {
+    font-size: 90%;
+}
+.table-container p {
+    margin: 10px 0  5px 0;
+} 
+.table-container input {
+    outline: none;
+    padding: 7px;
+    width: 100px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.532);
+    border-radius: 5px;
+    color: white;
+}
+.table-container input::placeholder {
+    color: rgba(245, 245, 245, 0.534);
 }
 .buttons {
     margin-top: 15px;
@@ -138,5 +159,4 @@ select{
     .controls {    
         width: 33.33%;
     }
- 
 }
