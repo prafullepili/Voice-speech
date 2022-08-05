@@ -1,4 +1,6 @@
 let speech = new SpeechSynthesisUtterance();
+let textDataFormLocalStorage = localStorage.getItem('textData');
+document.querySelector("textarea").value = textDataFormLocalStorage;
 speech.lang = "en";
 
 let voices = [];
@@ -50,24 +52,27 @@ document.querySelector("#voices").addEventListener("change", () => {
 // start
 document.querySelector("#start").addEventListener("click", () => {
     window.speechSynthesis.cancel();
-    const table = document.querySelector('#table').value;
-    tablespeak = "";
-    if (table != "") {
-        tableprinting = "";
-        for (let i = 1; i < 11; i++) {
-            
-            tablespeak += `${table} times ${i} = ${parseInt(table) * i}\n`;
-            tableprinting += `${table} x ${i} = ${parseInt(table) * i}\n`;
-        }
-    document.querySelector("textarea").value = tableprinting;
-    speech.text = tablespeak;
+    // const table = document.querySelector('#table').value;
+    // tablespeak = "";
+    // if (table != "") {
+    //     tableprinting = "";
+    //     for (let i = 1; i < 11; i++) {
+
+    //         tablespeak += `${table} times ${i} = ${parseInt(table) * i}\n`;
+    //         tableprinting += `${table} x ${i} = ${parseInt(table) * i}\n`;
+    //     }
+    // document.querySelector("textarea").value = tableprinting;
+    // speech.text = tablespeak;
+    // window.speechSynthesis.speak(speech);
+    // document.querySelector('#table').value = '';
+    // }
+    // else {
+    const enteredText = document.querySelector("textarea").value.toString();
+    localStorage.setItem('textData',`${enteredText}`)
+    
+    speech.text = localStorage.getItem('textData');
     window.speechSynthesis.speak(speech);
-    document.querySelector('#table').value = '';
-    }
-    else {
-        speech.text = document.querySelector("textarea").value;
-        window.speechSynthesis.speak(speech);
-    }
+    // }
 });
 
 // pause
@@ -83,4 +88,9 @@ document.querySelector("#cancel").addEventListener("click", () => {
     window.speechSynthesis.cancel();
 });
 
+//clear
+document.getElementById('clear').addEventListener('click', () => {
+    document.querySelector("textarea").value = "";
+    localStorage.removeItem('textData')
+})
 

@@ -101,7 +101,7 @@ select{
 .buttons {
     margin-top: 15px;
 }
-.buttons > .start,.pause,.resume,.cancel {
+.buttons > .start,.pause,.resume,.cancel,.clear {
     padding: 5px 8px;
     margin-right: 10px;
     border-radius: 3px;
@@ -121,6 +121,10 @@ select{
     background: rgb(201, 51, 51);
     color: #fff;
 }
+.clear {
+    background-color: gray;
+    color: white;
+} 
 .start:active {
     outline: green solid 3px;
     background: rgba(68, 199, 41,.8);
